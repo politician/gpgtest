@@ -1,1 +1,1 @@
-d# gpgtest
+# gpgtest
