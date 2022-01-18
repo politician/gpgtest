@@ -21,7 +21,7 @@ jobs:
           version: 5.15.0
         
       - name: Running qmake
-        run: cd $GITHUB_WORKSPACE; qmake pgmodeler.pro -r PREFIX=/Applications/pgModeler.app/Contents PGSQL_INC=`pg_config --includedir` PGSQL_LIB=`pg_config --libdir`/libpq.dylib
+        run: cd $GITHUB_WORKSPACE; qmake pgmodeler.pro -r PREFIX=./build/pgModeler.app/Contents PGSQL_INC=`pg_config --includedir` PGSQL_LIB=`pg_config --libdir`/libpq.dylib
     
       - name: Building pgModeler
         run: make -j6
@@ -32,4 +32,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: pgModeler.app
-          path: /Applications/pgModeler.app
+          path: ./build
